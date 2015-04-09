@@ -1,0 +1,39 @@
+extends ../../layout.jade
+block title 
+    title HTML5
+block afterhead
+    link(
+        rel = 'stylesheet'
+        href = '#{globalPageData.cdn}css/test/test1.css'
+    )
+block content
+    header
+        h1 Header
+        h2 Subtitle
+        h4 HTML5 Rocks!
+
+    #container
+        nav 
+            h3 nav
+            each i in [1,2,3]
+                a(href='http://www.example.com' target='_blank') Link #{i}
+        section
+            article
+                header
+                    h1 Article Header
+                p Lorem ipsum dolor HTML5 nunc aut nunquam sit amet,consectetur adipidsa esakl. dsajio ar sjkldsad,dsajkl ilds a.
+                p peir jkldsalki .a ejwkq dakljql.dsajioq,dsaoip1dsa,dsa.
+                footer
+                    h2 Article Footer
+            article
+                header
+                    h1 Article Header
+                p Lorem ipsum dolor HTML5 nunc aut nunquam sit amet,consectetur adipidsa esakl. dsajio ar sjk
+                p peir jkldsalki .a ejwkq dakljql.dsaji,ip1dsa,dsa.
+                footer
+                    h2 Article Footer
+        aside
+            h3 Aside
+            p HTML5: "lorem ipsun odlwidnjuiacjklai nds, daoncnjkdsaoi dsa. nIodsajklda ,dsao jjkldsai dsamkld. mkdlsai dsaklq"
+        footer
+            h2 Footer

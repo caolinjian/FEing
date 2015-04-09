@@ -1,0 +1,13 @@
+extends ../layout.jade
+block title 
+    title #{title}
+block afterhead
+    link(
+        rel = 'stylesheet'
+        href = '#{globalPageData.cdn}css/index.css'
+    )
+block content
+    h1 Hello World!
+    a(href='/test/test1') test1
+block afterbody
+    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='index' src='#{globalPageData.cdn}libs/requirejs/require.js')

@@ -1,0 +1,26 @@
+{
+  "name": "FEing..",
+  "version": "0.0.1",
+  "authors": [
+    "jiansheng <jiansheng@aidingmao.com>"
+  ],
+  "description": "learing FE front-end engineer koa",
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "require.js",
+    "node.js",
+    "koa",
+    "mongoose",
+    "socket"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/libs",
+    "test",
+    "tests"
+  ]
+}
