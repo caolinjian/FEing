@@ -71,4 +71,4 @@ require('./routers/index')(app);
 
 require('./middleware/logger')(app);
 
-app.listen(G.C.port);
+app.listen(process.env.VCAP_APP_PORT || 3000);

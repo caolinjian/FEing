@@ -1,6 +1,7 @@
 "use strict";
 
-var evn = process.env.NODE_ENV || 'development';
+//var evn = process.env.NODE_ENV || 'development';
+var evn = 'development';
 var path = require('path');
 var os = require('os');
 
