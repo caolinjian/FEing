@@ -9,6 +9,8 @@ module.exports=function(app){
 
     router.get('/test/test1', ctrl.default.index);
 
+    router.get('/test/testCanvas', ctrl.default.index);
+
     return router.middleware();
 }
 

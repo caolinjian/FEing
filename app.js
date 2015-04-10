@@ -67,8 +67,8 @@ app.use(staticCache('./static', {
     maxAge: 24 * 60 * 60
 }));
 
-require('./routers/index')(app);
-
 require('./middleware/logger')(app);
+
+require('./routers/index')(app);
 
 app.listen(process.env.VCAP_APP_PORT || 3000);

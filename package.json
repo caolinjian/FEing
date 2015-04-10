@@ -4,7 +4,12 @@
   "description": "一只前端攻城师的修炼demo",
   "main": "index.js",
   "scripts": {
+    "start": "node --harmony app.js",
+    "postinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines":{
+    "node":">=0.11"
   },
   "author": "cao linjian",
   "license": "ISC",

@@ -1,0 +1,17 @@
+extends ../../layout.jade
+block title 
+    title Canvas
+block content
+    div
+        canvas#diagonal(style={border:'1px solid',width:'200px;',height:'200px;'})
+block afterbody
+    script.
+        function drawDiagonal(){
+            var canvas = document.getElementById('diagonal');
+            var context = canvas.getContext('2d');
+            context.beginPath();
+            context.moveTo(70,140);
+            context.lineTo(140,70);
+            context.stroke();
+        }
+        document.addEventListener('DOMContentLoaded',drawDiagonal);
