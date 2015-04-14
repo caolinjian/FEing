@@ -9,5 +9,10 @@ block afterhead
 block content
     h1 Hello World!
     a(href='/test/test1') test1
+    a(href='/test/test2') test2
+    a(href='/test/test3') test3
+    a(href='/test/testCanvas') testCanvas
+    a(href='/test/angular1') angular1
+
 block afterbody
-    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='index' src='#{globalPageData.cdn}libs/requirejs/require.js')
+    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='angular1' src='#{globalPageData.cdn}libs/requirejs/require.js')

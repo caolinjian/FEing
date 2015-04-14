@@ -22,7 +22,7 @@ app.use(function*(next) {
     var start = new Date;
     yield next;
     var ms = new Date - start;
-    this.set('X-Response-Time', ms + 'm');
+    this.set('X-Response-Time', ms + 'ms');
 });
 
 app.use(jade.middleware({
@@ -64,11 +64,11 @@ app.use(koaBody({
 require('koa-qs')(app);
 
 app.use(staticCache('./static', {
-    maxAge: 24 * 60 * 60
+    maxAge: 0
 }));
 
 require('./middleware/logger')(app);
 
 require('./routers/index')(app);
 
-app.listen(process.env.VCAP_APP_PORT || 3000);
+app.listen(G.C.port);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
