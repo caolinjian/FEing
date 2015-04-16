@@ -1,0 +1,24 @@
+extends ../../layout.jade
+block title 
+    title angular1
+block afterhead
+    link(
+        rel = 'stylesheet'
+        href = '#{globalPageData.cdn}libs/bootstrap/dist/css/bootstrap.min.css'
+    )
+block content
+    .container(ng-app='app')
+        tabs
+            pane(title='Localization')
+                | Date:{{'2012-04-01' | date:'fullDate'}}
+                br
+                | Currency: {{ 123456 | currency }}
+                br
+                | Number: {{ 98765.4321 | number }}
+                br
+            pane(title='Pluralization')
+                div(ng-controller='BeerCounter')
+                    div(ng-repeat='beerCount in beers')
+                        ng-pluralize(count='beerCount' when='beerForms')
+block afterbody
+    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='angular1' src='#{globalPageData.cdn}libs/requirejs/require.js')

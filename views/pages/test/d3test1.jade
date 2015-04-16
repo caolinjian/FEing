@@ -1,0 +1,7 @@
+extends ../../layout.jade
+block title 
+    title D3 test
+block content
+    .content(style={width:'960px',height:'500px',margin:'50px auto',border:'1px solid #ccc'})
+block afterbody
+    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='d3test1' src='#{globalPageData.cdn}libs/requirejs/require.js')

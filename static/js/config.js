@@ -10,7 +10,8 @@ require.config({
         angularResource: '../libs/angular-resource/angular-resource',
         angularRoute: '../libs/angular-route/angular-route',
         angularFire: '../libs/angularfire/dist/angularfire',
-        firebase: '../libs/firebase/firebase'
+        firebase: '../libs/firebase/firebase',
+        d3:'../libs/d3/d3.min'
     },
     shim: {
         angular: {
@@ -24,6 +25,9 @@ require.config({
         },
         angularFire: {
             deps: ['angular', 'firebase']
-        }
+        },
+        d3: {
+            exports: 'd3'
+        },
     }
 });

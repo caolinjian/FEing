@@ -1,0 +1,13 @@
+.chart div {
+  font: 13px sans-serif;
+  line-height: 13px;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin-bottom: 2px;
+  color: white;
+}
+.chart rect {
+  stroke: white;
+  fill: steelblue;
+}

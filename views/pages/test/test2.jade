@@ -1,0 +1,19 @@
+extends ../../layout.jade
+block title 
+    title css3
+block afterhead
+    link(
+        rel = 'stylesheet'
+        href = '#{globalPageData.cdn}css/test/test2.css'
+    )
+block content
+    h1 径向动画菜单效果
+    .nav-wrap
+        nav
+            -var n = 0
+            while n < 12
+                a(class='nav-item#{n}') #{n++}
+        a.main-nav 点我
+block afterbody
+    script(src='#{globalPageData.cdn}libs/jquery/dist/jquery.min.js')
+    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='test2' src='#{globalPageData.cdn}libs/requirejs/require.js')
