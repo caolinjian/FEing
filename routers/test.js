@@ -7,17 +7,7 @@ var ctrl = require('../controllers/index');
 module.exports=function(app){
     var router = new Router();
 
-    router.get('/test/test1', ctrl.default.index);
-
-    router.get('/test/test2', ctrl.default.index);
-    router.get('/test/test3', ctrl.default.index);
-    router.get('/test/angular1', ctrl.default.index);
-    router.get('/test/testCanvas', ctrl.default.index);
-    router.get('/test/snake', ctrl.default.index);
-    router.get('/test/d3test1', ctrl.default.index);
-    router.get('/test/d3learn1', ctrl.default.index);
-    router.get('/test/d3learn2', ctrl.default.index);
-    router.get('/test/d3learn3', ctrl.default.index);
+    router.get('/test/(.*)', ctrl.default.index);
     return router.middleware();
 }
 
