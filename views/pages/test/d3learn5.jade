@@ -1,0 +1,10 @@
+extends ../../layout.jade
+block afterhead
+    link(
+        rel = 'stylesheet'
+        href = '#{globalPageData.cdn}css/test/d3learn5.css'
+    )
+block title 
+    title D3 learn5
+block afterbody
+    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='d3learn5' src='#{globalPageData.cdn}libs/requirejs/require.js')

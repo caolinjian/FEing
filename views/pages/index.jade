@@ -24,18 +24,16 @@ block content
                         p 关于D3的一些test页面
                     ul.list-group
                         a.list-group-item(href='/test/d3test1') d3test1
-                        a.list-group-item(href='/test/d3learn1') d3learn1
-                        a.list-group-item(href='/test/d3learn2') d3learn2
-                        a.list-group-item(href='/test/d3learn3') d3learn3
+                        -for(var x =1;x<6;x++)
+                            a.list-group-item(href='/test/d3learn#{x}') d3learn#{x}
             .col-md-6
                 .panel.panel-info
                     .panel-heading html5/css3
                     .panel-body
                         p 关于html5/css3的一些test页面
                     ul.list-group
-                        a.list-group-item(href='/test/test1') test1
-                        a.list-group-item(href='/test/test2') test2
-                        a.list-group-item(href='/test/test3') test3
+                        -for(var x =1;x<4;x++)
+                            a.list-group-item(href='/test/test#{x}') test#{x}
         .row
             .col-md-6
                 .panel.panel-info
@@ -54,4 +52,4 @@ block content
                         a.list-group-item(href='/test/angular1') angular1
             
 block afterbody
-    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='d3test1' src='#{globalPageData.cdn}libs/requirejs/require.js')
+    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='index' src='#{globalPageData.cdn}libs/requirejs/require.js')

@@ -20,7 +20,7 @@ module.exports = {
                 path: 'index2',
                 data: {
                     globalPageData: G.C.globalPageData,
-                    title: 'Hello World!'
+                    title: '首页'
                 }
             }
         });
