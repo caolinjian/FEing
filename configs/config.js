@@ -1,6 +1,5 @@
 "use strict";
 
-//var evn = process.env.NODE_ENV || 'development';
 var evn = 'development';
 var path = require('path');
 var os = require('os');
@@ -16,7 +15,6 @@ var Config = {
     'production': {
         port: 3010,
         globalPageData: {
-            // cdn: 'http://static1.aidingmao.com/dist_boss/v19/',
             cdn: '/'
         }
     }

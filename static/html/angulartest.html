@@ -17,7 +17,6 @@
     .base-class.my-class {
         width: 200px;
         height: 0px;
-        opacity: 0;
     }
     </style>
 </head>
@@ -26,7 +25,7 @@
     <div ng-controller="haha">
         <h1>Hello {{ clock.now }}!</h1>
         <input ng-model="expr" type="text" placeholder="Enter an expression">
-        <h2>{{ parsedValue }}</h2>
+        <h2>{{ parsedValue | haha:'+':'8' }}</h2>
         <input ng-click="transformer(dsa,'321')" type="button">
         <h2>{{ idena }}</h2>
         <input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">
@@ -41,10 +40,10 @@
     angular.module('app', [])
         .controller('haha', ['$scope', '$parse', '$interpolate', function($scope, $parse, $interpolate) {
             $scope.clock = {
-                now: new Date().toLocaleTimeString()
+                now: new Date().toLocaleString()
             }
             var updateClock = function() {
-                $scope.clock.now = new Date().toLocaleTimeString();
+                $scope.clock.now = new Date().toLocaleString();
             };
             setInterval(function() {
                 $scope.$apply(updateClock);
@@ -71,9 +70,16 @@
                     });
                 }
             })
+            $scope.hehe = function
         }])
+        .filter('haha',function() {
+            return function(input,a,b){
+                if(input)
+                    return input+'---'+a+b
+            }
+        });
 
-    angular.bootstrap(document.getElementsByTagName('body')[0], ['app']);
+    angular.bootstrap(document, ['app']);
     </script>
 </body>
 

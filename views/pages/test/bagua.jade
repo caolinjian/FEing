@@ -1,0 +1,10 @@
+extends ../../layout.jade
+block title 
+    title 八卦
+block afterhead
+    link(rel="stylesheet" href="#{globalPageData.cdn}css/test/bagua.css")
+block content
+    .container
+        .bagua
+block afterbody
+    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='bagua' src='#{globalPageData.cdn}libs/requirejs/require.js')

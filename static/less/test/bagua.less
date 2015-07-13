@@ -1,0 +1,56 @@
+html {
+    position: relative;
+    height: 100%;
+    background-color: #eee;
+}
+
+.container {
+    width: 760px;
+    height: 450px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.bagua {
+    width: 384px;
+    height: 192px;
+    background: #fff;
+    border-color: black;
+    border-style: solid;
+    border-width: 8px 8px 200px 8px;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        background: #fff;
+        border: 72px solid black;
+        border-radius: 100%;
+        width: 48px;
+        height: 48px;
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: black;
+        border: 72px solid #fff;
+        border-radius: 100%;
+        width: 48px;
+        height: 48px;
+    }
+}
