@@ -1,0 +1,9 @@
+extends ../../layout.jade
+block title 
+    title trianglify
+block afterhead
+
+block content
+    
+block afterbody
+    script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='trianglify' src='#{globalPageData.cdn}libs/requirejs/require.js')

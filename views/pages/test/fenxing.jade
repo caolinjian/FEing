@@ -1,0 +1,103 @@
+extends ../../layout.jade
+block title 
+    title fenxing
+block afterhead
+    style.
+        *{
+          margin:0;
+          padding:0;
+        }
+        body{
+          position:absolute;
+          top:0;
+          right:0;
+          bottom:0;
+          left:0;
+          background:#222;
+        }
+        .first-container{
+          width:80%;
+          top:50%;
+          left:50%;
+          margin:11% 0 0 -40%;
+          position:absolute;
+        }
+        .container{
+          position:relative;
+          height:4px;
+          margin:-1px 0;
+          background:#222;
+        }
+        [class^=side]{
+          top:1px;
+          bottom:1px;
+          background:#ddd;
+          width:33.3333333333%;
+          position:absolute;
+        }
+        .side1{
+          left:0;
+        }
+        .side2{
+          left:33.3333333333%;
+          transform-origin:0;
+          transform:rotate(-60deg);
+        }
+        .side3{
+          right:33.3333333333%;
+          transform-origin:100%;
+          transform:rotate(60deg);
+        }
+        .side4{
+          right:0;
+        }
+
+block content
+    - var sides = [1,2,3,4]
+    .first-container
+      .container
+        each side in sides
+          div(class="side"+side)
+block afterbody
+    script.
+        window.onload = function(){
+          var level = 5,
+              duration = 1500,
+              sides,
+              newSides,
+              count,
+              interval;
+          
+              init();
+          
+          function init(){
+            if(interval) clearInterval(interval);
+            sides = document.querySelectorAll('.first-container');
+            sides[0].innerHTML = '';
+            count = 0;
+            increase();
+            interval = setInterval(increase,duration);
+          }
+          
+          function increase(){
+            if(count === level) {
+              init();
+              return;
+            }
+            newSides = [];
+            for(var i = 0, lgth = sides.length; i < lgth; i++){
+              var side = sides[i];
+              var container = document.createElement('div');
+              container.setAttribute('class','container');
+              for(var j = 0; j < 4; j++){
+                var newSide = document.createElement('div');
+                newSide.setAttribute('class','side'+(j+1));
+                newSides.push(newSide);
+                container.appendChild(newSide);
+              }
+              side.appendChild(container);
+            }
+            sides = newSides;
+            count++;
+          }
+        };

@@ -70,10 +70,10 @@
                     });
                 }
             })
-            $scope.hehe = function
         }])
         .filter('haha',function() {
             return function(input,a,b){
+                console.log(input);
                 if(input)
                     return input+'---'+a+b
             }
