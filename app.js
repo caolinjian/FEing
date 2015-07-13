@@ -20,9 +20,8 @@ G.C = require('./configs/config');
 //response time
 app.use(function*(next) {
     var start = new Date;
-    yield next;
+    yield *next;
     var ms = new Date - start;
-    this.set('X-Response-Time', ms + 'ms');
 });
 
 app.use(jade.middleware({
@@ -71,4 +70,4 @@ require('./middleware/logger')(app);
 
 require('./routers/index')(app);
 
-app.listen(G.C.port);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+app.listen(G.C.port);

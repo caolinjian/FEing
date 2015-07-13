@@ -10,7 +10,7 @@ module.exports = function(app) {
                 .replace(':url', this.url);
             console.log(str);
 
-            yield next;
+            yield *next;
         }
     }
     app.use(logger());
