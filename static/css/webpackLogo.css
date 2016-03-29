@@ -1,4 +1,4 @@
-/*@-webkit-keyframes slowspin {
+@-webkit-keyframes slowspin {
     0% {
         -webkit-transform: rotateX(-33.5deg) rotateY(45deg);
         transform: rotateX(-33.5deg) rotateY(45deg)
@@ -37,7 +37,7 @@
         -webkit-transform: rotateX(-33.5deg) rotateY(-315deg);
         transform: rotateX(-33.5deg) rotateY(-315deg)
     }
-}*/
+}
 
 .logo {
     width: 100%;

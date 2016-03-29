@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Cube</title>
@@ -10,30 +9,25 @@
         body {
             height: 100%;
         }
-
-        body {
-            font-size: 150px;
-        }
-
         @keyframes box {
-            from {
+            from,5% {
                 transform: rotateX(35deg) rotateY(-45deg);
             }
-            25% {
+            20%,30% {
                 transform: rotateX(35deg) rotateY(45deg);
             }
-            50% {
+            45%,55% {
                 transform: rotateX(35deg) rotateY(135deg);
             }
-            75% {
+            70%,80% {
                 transform: rotateX(35deg) rotateY(225deg);
             }
-            to {
+            95%,to {
                 transform: rotateX(35deg) rotateY(315deg);
             }
         }
-
-        .box {
+        .box,.box-inner {
+            font-size: 100px;
             position: absolute;
             width: 1em;
             height: 1em;
@@ -41,67 +35,63 @@
             left: 50%;
             margin: -.5em 0 0 -.5em;
             transform-style: preserve-3d;
-            animation: box 8s cubic-bezier(.9, 0, .6, 1) infinite;
+            animation: box 10s ease-in-out infinite;
+            transform: rotateX(35deg) rotateY(-45deg);
         }
-
-        .box .face {
+        .box-inner{
+            font-size: 50px;
+            animation: box 10s ease-in-out  infinite reverse;
+        }
+        .face {
             position: absolute;
             top: 0;
             left: 0;
             width: 1em;
             height: 1em;
             box-sizing: border-box;
-            border: 1px dashed #222;
-            overflow: hidden;
+            box-shadow: 0px 0 2px rgba(0, 0, 0, .1);
+            line-height: 1em;
+            text-align: center;
         }
-
-        .box .face::before,
-        .box .face::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 1px;
-            height: 1.5em;
-            transform: translate(-50%, -50%) rotate(-45deg);
-        }
-
-        .box .face::after {
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .box .face:nth-child(1) {
+        .face:nth-child(1) {
             transform: translateZ(.5em);
         }
 
-        .box .face:nth-child(2) {
+        .face:nth-child(2) {
             transform: translateX(.5em) rotateY(90deg);
             background: rgba(0, 255, 0, 0.3);
         }
 
-        .box .face:nth-child(3) {
+        .face:nth-child(3) {
             transform: translateY(.5em) rotateX(90deg);
-            background: rgba(125, 125, 125, 0.3);
         }
 
-        .box .face:nth-child(4) {
+        .face:nth-child(4) {
             transform: translateX(-.5em) rotateY(90deg);
-            background: rgba(255, 0, 0, 0.3);
+            background:rgba(0, 0, 255, 0.3);
         }
 
-        .box .face:nth-child(5) {
+        .face:nth-child(5) {
             transform: translateY(-.5em) rotateX(90deg);
         }
 
-        .box .face:nth-child(6) {
+        .face:nth-child(6) {
             transform: translateZ(-.5em);
-            background: rgba(0, 0, 255, 0.3);
+            background:rgba(255, 0, 0, 0.3);
         }
     </style>
 </head>
 
 <body>
     <div class="box">
+        <div class="face"></div>
+        <div class="face"></div>
+        <div class="face"></div>
+        <div class="face"></div>
+        <div class="face"></div>
+        <div class="face"></div>
+    </div>
+    <div class="box-inner">
         <div class="face"></div>
         <div class="face"></div>
         <div class="face"></div>
