@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.3.15/angular.js"></script>
     <style type="text/css">
     .base-class {
         background-color: red;
@@ -13,7 +13,7 @@
         -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
         transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
     }
-    
+
     .base-class.my-class {
         width: 200px;
         height: 0px;
@@ -52,7 +52,7 @@
                 if (newVal !== oldVal) {
                     // 用该表达式设置parseFun
                     var parseFun = $parse(newVal);
-                    // 获取经过解析后表达式的值 
+                    // 获取经过解析后表达式的值
                     $scope.parsedValue = parseFun(scope);
                 }
             });
