@@ -7,13 +7,13 @@ var os = require('os');
 
 var Config = {
     'development': {
-        port: 3010,
+        port: 4010,
         globalPageData: {
             cdn: '/'
         }
     },
     'production': {
-        port: 3010,
+        port: 4010,
         globalPageData: {
             cdn: '/'
         }
