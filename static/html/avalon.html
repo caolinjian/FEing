@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>first example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+        <div ms-controller="start">
+            <p>Hello,{{@name}}!</p>
+            <input ms-duplex="@name">
+            <select ms-duplex="@fruit">
+                <option value="321">苹果</option>
+                <option>香蕉</option>
+                <option>火龙果</option>
+            </select>
+            <p>{{@fruit}}</p>
+        </div>
+
+        <div ms-controller="app">
+            <ul>
+                <li ms-for="index,todo in @todos"> {{index}}::{{todo.text}} </li>
+            </ul>
+        </div>
+        <div ms-controller="app2">
+            <div ms-on-mousemove="@fn" style='width:200px;height:200px;background:#4298ba'>
+                {{@text}}
+            </div>
+        </div>
+        <ms-datepicker></ms-datepicker>
+        <script src="./js/avalon.js"></script>
+        <script>
+            var vm = avalon.define({
+                $id: "start",
+                name: "司徒正美",
+                fruit: '凤梨'
+            })
+            avalon.define({
+                $id:'app',
+                todos:[
+                    {text:'Learn JavaScript'},
+                    {text:'Learn Vue.js'},
+                    {text:'Build Something Awesome'}
+                ]
+            })
+            avalon.define({
+                $id:'app2',
+                fn: function(e){
+                    this.text = e.pageX + ' ' + e.pageY;
+                },
+                text:''
+            })
+        </script>
+    </body>
+
+</html>

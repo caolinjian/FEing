@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ms-validate</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <script src="./js/avalon.js"></script>
+        <script>
+            avalon.shadowCopy(avalon.validators, {
+                phone: {
+                    message: '手机格式不正确，请重新输入',
+                    get: function(value, field, next) {
+                        next(/^0?(1[0-9]{2})[0-9]{8}$/.test(value));
+                        return value
+                    }
+                }
+            })
+            var vm = avalon.define({
+                $id: "test",
+                user: '',
+                isEmail:true,
+                validate: {
+                    onError: function (reasons) {
+                        reasons.forEach(function (reason) {
+                            console.log(reason.getMessage())
+                        })
+                    }
+                }
+            })
+            vm.$watch('user',function(val){
+                if(/^\d+$/.test(val)){
+                    vm.isEmail=false
+                }else{
+                    vm.isEmail=true
+                }
+            })
+        </script>
+    </head>
+
+    <body ms-controller="test">
+        <form class="cmxform" ms-validate="@validate" >
+            <fieldset>
+                <legend>验证完整的表单</legend>
+                <p>
+                    <label for="user">名字</label>
+                    <input id="user"
+                           name="user"
+                           ms-duplex="@user"
+                           ms-rules="{required:true,email:@isEmail,phone:!@isEmail}"
+                           data-required-message="请输入您的名字" >
+                </p>
+                <p>
+                    <input class="submit" type="submit" value="提交">
+                </p>
+            </fieldset>
+        </form>
+    </body>
+</html>

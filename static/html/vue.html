@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>first example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+
+    <body>
+        <div id="start">
+            <p>Hello,{{name}}!</p>
+            <input v-bind:value="name">
+            <input v-on:change="changeName">
+            <select v-model="fruit">
+                <option value='321'>苹果</option>
+                <option>香蕉</option>
+                <option>火龙果</option>
+            </select>
+            <p>{{fruit}}</p>
+        </div>
+
+        <div id="app">
+            <ul>
+                <li v-for="(index,todo) in todos">{{index}}::{{todo.text}} </li>
+            </ul>
+        </div>
+        <div id="app2">
+            <div v-on:mousemove="fn" style='width:200px;height:200px;background:#4298ba'>
+                {{text}}
+            </div>
+        </div>
+        <script src="./js/vue.js"></script>
+        <script>
+            new Vue({
+                el: "#start",
+                data: {
+                    name: "Vue.js",
+                    fruit:'凤梨'
+                },
+                methods:{
+                    changeName:function(e){
+                        console.log(e)
+                        this.name=e.target.value;
+                    }
+                }
+            })
+            new Vue({
+                el:"#app",
+                data:{
+                    todos:[
+                        {text:'Learn JavaScript'},
+                        {text:'Learn Vue.js'},
+                        {text:'Build Something Awesome'}
+                    ]
+                }
+            })
+            new Vue({
+                el:"#app2",
+                methods:{
+                    fn:function(e){
+                        this.text = e.pageX + ' ' + e.pageY;
+                    }
+                },
+                data:{
+                    text:''
+                }
+            })
+        </script>
+    </body>
+
+</html>
