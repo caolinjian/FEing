@@ -4,7 +4,10 @@ block afterhead
         rel = 'stylesheet'
         href = '#{globalPageData.cdn}css/test/d3learn1.css'
     )
+    script(type="text/javascript" scr="https://d3js.org/d3.v4.min.js")
 block title 
     title D3 learn1
+block content
+    svg
 block afterbody
     script#J_requireScript(data-main='#{globalPageData.cdn}js/config' data-entrance='d3learn1' src='#{globalPageData.cdn}libs/requirejs/require.js')

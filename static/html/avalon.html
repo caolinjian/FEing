@@ -38,6 +38,9 @@
                 name: "司徒正美",
                 fruit: '凤梨'
             })
+            vm.$watch('name',function(){
+                this.name=1
+            })
             avalon.define({
                 $id:'app',
                 todos:[

@@ -11,7 +11,7 @@
     <body>
         <div id="start">
             <p>Hello,{{name}}!</p>
-            <input v-bind:value="name">
+            <input v-model="name">
             <input v-on:change="changeName">
             <select v-model="fruit">
                 <option value='321'>苹果</option>
@@ -31,9 +31,9 @@
                 {{text}}
             </div>
         </div>
-        <script src="./js/vue.js"></script>
+        <script src="./js/vue2.js"></script>
         <script>
-            new Vue({
+            var vm=new Vue({
                 el: "#start",
                 data: {
                     name: "Vue.js",
@@ -45,6 +45,9 @@
                         this.name=e.target.value;
                     }
                 }
+            })
+            vm.$watch('name', function (val) {
+              this.name=1
             })
             new Vue({
                 el:"#app",

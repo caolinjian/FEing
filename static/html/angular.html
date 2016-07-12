@@ -1,59 +1,53 @@
 <!DOCTYPE html>
 <html ng-app="phonecatApp" ng-controller="PhoneListCtrl">
 
-<head>
-    <meta charset="UTF-8">
-    <title ng-bind-template="Google Phone Gallery: {{query}}">Google Phone Gallery</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Google Phone Gallery</title>
+    </head>
 
-<body>
-    <table>
-        <tr>
-            <th>row number</th>
-        </tr>
-        <tr ng-repeat="i in [0, 1, 4, 3, 4, 5, 6, 7] track by $index">
-            <td>{{i+1}}</td>
-            <td>{{$Math.random()}}</td>
-        </tr>
-    </table>
-    <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2">
-      <!--Sidebar content-->
+    <body>
+        <p>Hello,{{name}}!</p>
+        <input ng-model="name" />
+        <!-- <table>
+            <tr>
+                <th>row number</th>
+            </tr>
+            <tr ng-repeat="i in [0, 1, 4, 3, 4, 5, 6, 7] track by $index">
+                <td>{{i+1}}</td>
+                <td>{{$Math.random()}}</td>
+            </tr>
+        </table>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    Search:
+                    <input ng-model="query">
 
-      Search: <input ng-model="query">
+                </div>
+                <div class="col-md-10">
+                    <ul class="phones">
+                        <li ng-repeat="phone in phones | filter:query">
+                            {{phone.name}}
+                            <p>{{phone.snippet}}</p>
+                        </li>
+                    </ul>
 
-    </div>
-    <div class="col-md-10">
-      <!--Body content-->
+                </div>
+            </div>
 
-      <ul class="phones">
-        <li ng-repeat="phone in phones | filter:query">
-          {{phone.name}}
-          <p>{{phone.snippet}}</p>
-        </li>
-      </ul>
+        </div> -->
+    </body>
+    <script src="./js/angular.js"></script>
+    <script>
+        var phonecatApp = angular.module('phonecatApp', []);
 
-    </div>
-  </div>
-</div>
-</body>
-<script src="//cdn.bootcss.com/angular.js/1.2.2/angular.js"></script>
-<script src="/html/js/controllers.js">
-    var phonecatApp = angular.module('phonecatApp', []);
+        phonecatApp.controller('PhoneListCtrl', function($scope) {
+            $scope.$watch('name',function(newval,oldval){
+                $scope.name=1
+            })
+        });
 
-    phonecatApp.controller('PhoneListCtrl', function($scope) {
-        $scope.phones = [{
-            'name': 'Nexus S',
-            'snippet': 'Fast just got faster with Nexus S.'
-        }, {
-            'name': 'Motorola XOOM™ with Wi-Fi',
-            'snippet': 'The Next, Next Generation tablet.'
-        }, {
-            'name': 'MOTOROLA XOOM™',
-            'snippet': 'The Next, Next Generation tablet.'
-        }];
-    });
-</script>
+    </script>
 
 </html>

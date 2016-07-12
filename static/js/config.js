@@ -11,7 +11,8 @@ require.config({
         angularRoute: '../libs/angular-route/angular-route',
         angularFire: '../libs/angularfire/dist/angularfire',
         firebase: '../libs/firebase/firebase',
-        d3:'../libs/d3/d3.min',
+         d3:'../libs/d3/d3.min',
+        //d3:'../libs/d3-4.7.1/d3.min',
         trianglify:'../libs/trianglify/dist/trianglify.min',
         snap:'../libs/Snap.svg/dist/snap.svg-min'
     },
